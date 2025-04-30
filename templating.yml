@@ -21,4 +21,4 @@
 
   handlers:
     - name: resart nginx
-      service: name=nginx state=retarted
+      service: name=nginx state=restarted
