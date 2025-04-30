@@ -1,7 +1,7 @@
 ---
 - name: install nginx
-   hosts: all
-   become: yes
+  hosts: all
+  become: yes
 # можно задать свои переменные vars
   vars:
     source_folder: ./
@@ -20,5 +20,5 @@
       - resart nginx
 
   handlers:
-    -name: resart nginx
-    service: name=nginx state=retarted
+    - name: resart nginx
+      service: name=nginx state=retarted
