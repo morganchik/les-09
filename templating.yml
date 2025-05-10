@@ -10,15 +10,16 @@
   tasks:
   - name: Ensure nginx package is present
     apt:
-      name: nginx'
+      name: nginx
       state: present
   
   - name: templating
     template: src={{ source_folder }}/index.j2 dest={{ dest_folder }}/index.html mode=0555 # подкладываем index уже с расширением html
-    #Модуль template копирует файл-шаблон (обычно с расширением .j2) с управляющего хоста (control node) на удаленный хост (managed node), подставляя значения переменных и выполняя логику, описанную в шаблоне.
+    #Модуль template копирует файл-шаблон (обычно с расширением .j2) с управляющего хоста (control node) на удаленный хост (managed node),
+    # подставляя значения переменных и выполняя логику, описанную в шаблоне.
     notify:
       - resart nginx
 
   handlers:
-    -name: resart nginx
-    service: name=nginx state=retarted
+    - name: resart nginx
+      service: name=nginx state=restarted
