@@ -13,5 +13,5 @@
   become: yes
 
   roles:
-  - commom
+  - common
   - security
