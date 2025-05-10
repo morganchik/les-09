@@ -8,4 +8,4 @@
     dest: /etc/ssh/sshd_config
     line: 'Banner /etc/ssh/banner'
   notify:
-    - restart sshd
+    - restart ssh
